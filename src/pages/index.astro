@@ -1,6 +1,4 @@
 ---
-export const prerender = false;
-
 import {getEntry} from "astro:content";
 import Layout from '../layouts/Layout.astro';
 import Prose from "../components/Prose.astro";
@@ -9,13 +7,14 @@ const time = {
     start: 2017,
     end: new Date().getFullYear(),
 }
+
 const CoverEndPoint = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1'
 
 const Cover = await fetch(CoverEndPoint)
     .then(response => response.json())
     .then(data => `https://cn.bing.com${data.images[0].url}`)
 
-// const {Content} = await getEntry('posts', 'me').then(post => post.render())
+const {Content} = await getEntry('blog', 'me').then(post => post.render())
 ---
 
 <Layout>
@@ -26,6 +25,7 @@ const Cover = await fetch(CoverEndPoint)
 
         <section class="lg:pt-16 pt-12 px-8 pb-16 flex-1 relative overflow-hidden">
             <Prose>
+                <Content/>
             </Prose>
 
             <footer class="absolute px-8 left-0 bottom-3 w-full text-xs sm:text-sm">
