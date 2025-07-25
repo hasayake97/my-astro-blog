@@ -1,0 +1,30 @@
+---
+import "../styles/global.css";
+import '@fontsource-variable/noto-serif-sc';
+import {ClientRouter} from "astro:transitions";
+
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=3600");
+---
+
+<!doctype html>
+<html lang="zh-Hans-CN" class="h-full">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="generator" content={Astro.generator}/>
+    <title>UNOT</title>
+    <ClientRouter/>
+</head>
+<body class="h-full">
+<main class="h-full overflow-hidden">
+    <slot/>
+</main>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: 'Noto Serif SC Variable', serif;
+    }
+</style>

@@ -1,0 +1,40 @@
+---
+export const prerender = false;
+
+import {getEntry} from "astro:content";
+import Layout from '../layouts/Layout.astro';
+import Prose from "../components/Prose.astro";
+
+const time = {
+    start: 2017,
+    end: new Date().getFullYear(),
+}
+const CoverEndPoint = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1'
+
+const Cover = await fetch(CoverEndPoint)
+    .then(response => response.json())
+    .then(data => `https://cn.bing.com${data.images[0].url}`)
+
+// const {Content} = await getEntry('posts', 'me').then(post => post.render())
+---
+
+<Layout>
+    <article class="h-full flex flex-col lg:flex-row">
+        <section
+            style={{backgroundImage: `url(${Cover})`}}
+            class="h-[24%] md:h-[30%] lg:h-full lg:w-[68%] bg-no-repeat bg-cover bg-center grayscale-25"/>
+
+        <section class="lg:pt-16 pt-12 px-8 pb-16 flex-1 relative overflow-hidden">
+            <Prose>
+            </Prose>
+
+            <footer class="absolute px-8 left-0 bottom-3 w-full text-xs sm:text-sm">
+                &copy; {time.start} - {time.end} · Built with{' '}
+                <a href="https://astro.build/" target="_blank">Astro</a>
+                {' '}and{' '}
+                <a href="https://tailwindcss.com" target="_blank">Tailwind CSS</a>.
+            </footer>
+        </section>
+    </article>
+</Layout>
+

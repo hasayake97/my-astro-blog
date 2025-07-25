@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@import "./variable.css";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --font-sans: 'Noto Serif SC Variable', 'sans-serif';
+}
+
+a {
+    @apply underline;
+}
