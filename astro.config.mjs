@@ -6,7 +6,7 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://heroic-wisp-9c6a1f.netlify.app',
+    output: 'server',
 
     adapter: netlify(),
 
