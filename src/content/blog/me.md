@@ -5,10 +5,8 @@ draft: false
 ---
 # Me
 
-Hello World.
+前端开发工程师，伪全栈。关于更详细的我，您请点击这里。
 
-I'm Rocky.
+音乐、武侠小说、FPS 游戏是我闲暇时的娱乐方式。
 
-I'm from china.
-
-Page CMS.
+壁纸援引自 [Bing](https://www.bing.com/)，每日更新。
