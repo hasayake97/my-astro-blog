@@ -1,30 +1,37 @@
 ---
 import "../styles/global.css";
-import '@fontsource-variable/noto-serif-sc';
+import Header from '../components/Header.astro';
 import {ClientRouter} from "astro:transitions";
+import Footer from "../components/Footer.astro";
+import '@fontsource-variable/noto-serif-sc';
 
-Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=3600");
+// Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=3600");
 ---
 
 <!doctype html>
-<html lang="zh-Hans-CN" class="h-full">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="icon" href="/favicon.ico"/>
-    <meta name="generator" content={Astro.generator}/>
-    <title>UNOT</title>
-    <ClientRouter/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width"/>
+  <link rel="icon" href="/favicon.ico"/>
+  <meta name="generator" content={Astro.generator}/>
+  <title>U'NOT</title>
+  <ClientRouter/>
 </head>
-<body class="h-full">
-<main class="h-full overflow-hidden">
+<body>
+<main>
+  <Header/>
+  <article class="h-200 block-layout md:py-7.5">
     <slot/>
+  </article>
+  <Footer/>
 </main>
 </body>
 </html>
 
 <style>
-    body {
-        font-family: 'Noto Serif SC Variable', serif;
-    }
+  body {
+    font-display: swap;
+    font-family: 'Noto Serif SC Variable', serif;
+  }
 </style>

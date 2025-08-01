@@ -1,4 +1,5 @@
 :root {
-    --bg-color: #353148;
-    --bg-main-color: #f4f4f5;
+    --opacity: 1;
+    --bg-color: #FFF;
+    --text-color: #000;
 }

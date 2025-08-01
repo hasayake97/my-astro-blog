@@ -1,0 +1,26 @@
+---
+const navList = [
+  {label: '文章', href: 'posts'},
+  {label: '标签', href: 'tags'},
+  {label: '关于', href: 'about'},
+  {label: '友链', href: 'links'},
+  {label: '外链', href: 'extra-links'},
+]
+---
+
+<header
+  class="block-layout md:py-7.5 after:clear-both after:block">
+
+  <img width="40" height="40" class="mt-0.5 float-left">
+
+  <ul class="flex float-left -ml-2.5 sm:ml-0 mt-4 sm:mt-0 w-full sm:w-auto sm:float-right text-nowrap">
+    {
+      navList.map(nav => (
+        <li class="mr-1 sm:mr-2 lg:mr-4 last:mr-0 p-2.5 font-bold text-sm sm:text-base lg:text-lg">
+          <a href={`/${nav.href}`}>{nav.label}</a>
+        </li>)
+      )
+    }
+  </ul>
+
+</header>

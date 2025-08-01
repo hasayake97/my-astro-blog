@@ -1,13 +1,15 @@
 ---
 const time = {
-    start: 2017,
-    end: new Date().getFullYear(),
+  start: 2017,
+  end: new Date().getFullYear(),
 }
 ---
 
-<footer class="absolute px-8 left-0 bottom-3 w-full text-xs sm:text-sm">
+<footer class="py-16 lg:py-20 text-xs sm:text-sm md:text-base lg:text-lg bg-black text-white">
+  <div class="block-layout">
     &copy; {time.start} - {time.end} · Built with{' '}
-    <a href="https://astro.build/" target="_blank">Astro</a>
+    <a class="underline" href="https://astro.build/" target="_blank">Astro</a>
     {' '}and{' '}
-    <a href="https://tailwindcss.com" target="_blank">Tailwind CSS</a>.
+    <a class="underline" href="https://tailwindcss.com" target="_blank">Tailwind CSS</a>.
+  </div>
 </footer>

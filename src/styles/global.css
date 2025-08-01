@@ -5,9 +5,13 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-    --font-sans: 'Noto Serif SC Variable', 'sans-serif';
+  --font-sans: 'Noto Serif SC Variable', 'serif';
 }
 
-a {
-    @apply underline;
+/*a {*/
+/*    @apply underline;*/
+/*}*/
+
+.block-layout {
+  @apply lg:max-w-250 mx-auto p-5 md:px-10;
 }
