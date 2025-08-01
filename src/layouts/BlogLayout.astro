@@ -1,10 +1,17 @@
 ---
-import Layout from './Layout.astro'
+import Layout from './Layout.astro';
+import Cover from '../components/Cover.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-    <header>
-        <div>w34</div>
-    </header>
-    <slot/>
+    <main class="h-full flex flex-col">
+        <header class="shadow-2xl">
+            <Cover class="h-50 bg-center bg-cover bg-no-repeat"/>
+        </header>
+        <section class="pt-8 pb-16 px-4 flex-1 relative overflow-y-auto">
+            <slot/>
+            <Footer/>
+        </section>
+    </main>
 </Layout>
